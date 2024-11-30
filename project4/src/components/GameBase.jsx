@@ -27,14 +27,32 @@ export default function GameBase(){
 
     return(
         <div>
-            
-            <h1>find:{targetAnimal}</h1>
-            <h1>{message}</h1>
-            {animals.map((animal)=>(
-                <button onClick={()=>handleClickAnimal(animal.name)}>
-                    <img src={require('../assets/image/'+animal.img)}></img>
-                </button>
+            <table border={1}>
+                <tr>
+                    <th colspan={3}>ANIMAL MATCHING GAME</th>
+                </tr>
+                <tr>
+                    <td>Result</td>
+                    <td>Animal Name</td>
+                    <td>Select the animal</td>
+                </tr>
+                <tr>
+                    <td><h1>{message}</h1></td>
+                    <td><h1>{targetAnimal}</h1></td>
+                    <td>
+                    {animals.map((animal)=>(
+                           <button onClick={()=>handleClickAnimal(animal.name)}>
+                               <img src={require('../assets/image/'+animal.img)}></img>
+                           </button>
             ))}
+                    </td>
+                </tr>
+
+            </table>
+            
+
+            
+            
             
         </div>
     );
